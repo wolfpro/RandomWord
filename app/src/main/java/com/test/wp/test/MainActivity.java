@@ -12,12 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Objects;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -73,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
             s += a.charAt(i);
         }
 
-        if(s.equals(" "))
-            s= "";
+        if (s.equals(" "))
+            s = "";
         return s;
     }
 
@@ -84,21 +79,21 @@ public class MainActivity extends AppCompatActivity {
         imm.hideSoftInputFromWindow(butRand.getWindowToken(),
                 InputMethodManager.HIDE_NOT_ALWAYS);
 
-
-        ArrayList<String> arrayList = new ArrayList();
+        String[] arrayList;
         String s = myText.getText().toString();
         s = valid(s);
 
-        if(s.length()==0)
+        if (s.length() == 0)
             return;
 
-        for (String spt : s.split(" ")) {
-            arrayList.add(spt);
-        }
+        arrayList = s.split(" ");
 
-        String ans = arrayList.get(random.nextInt(arrayList.size()));
+        /*for (String spt : s.split(" ")) {
+            arrayList.add(spt);
+        }*/
+
+        String ans = arrayList[random.nextInt(arrayList.length)];
         Toast.makeText(getApplicationContext(), ans, Toast.LENGTH_SHORT).show();
-        //toast.show();
     }
 
     public void onClickClear(View view) {
