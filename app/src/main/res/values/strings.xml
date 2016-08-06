@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Radom Words</string>
-</resources>
+    <string name="app_name">Случайный выбор слова</string>
+    <string name="butClearVal">очистить</string>
+    <string name="butRandVal">выбрать</string>
+    <string name="exampleVal">Петя Вася Дима</string>
+    <string name="description">Введите слова через пробел</string>
+    </resources>
